@@ -19,8 +19,17 @@ team_id ENV["MY_PORTAL_TEAM_ID"]
 team_name ENV["MY_PORTAL_TEAM_NAME"]
 
 platform :ios do
-  desc "Test lane"
+
+  desc "Renew a push notification certificate"
+  lane :renew_push_certificate do
+    # WIP
+  end
+
+  desc "Test lane with fastlane spaceship"
   lane :test do
-    # add actions here: https://docs.fastlane.tools/actions
+    Spaceship::Portal.login
+    Spaceship::Portal.select_team
+    app = Spaceship::Portal.app.find(ENV["MY_BUNDLE_IDENTIFIER"])
+    puts app
   end
 end
