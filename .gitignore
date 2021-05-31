@@ -270,4 +270,7 @@ zsdoc/data
 # direnv
 .envrc
 
+# Generated certificates
+apns
+
 # End of https://www.toptal.com/developers/gitignore/api/ruby,node,fastlane,macos,zsh

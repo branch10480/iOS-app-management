@@ -3,4 +3,3 @@ export FASTLANE_PASSWORD=hoge
 export MY_BUNDLE_IDENTIFIER=hoge
 export MY_PORTAL_TEAM_ID=hoge
 export MY_PORTAL_TEAM_NAME=hoge
-

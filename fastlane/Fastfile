@@ -20,9 +20,22 @@ team_name ENV["MY_PORTAL_TEAM_NAME"]
 
 platform :ios do
 
+  app_id = ENV["MY_BUNDLE_IDENTIFIER"]
+
   desc "Renew a push notification certificate"
   lane :renew_push_certificate do
-    # WIP
+    get_push_certificate(
+      development: false,
+      app_identifier: app_id,
+      pem_name: "#{app_id}.pem",
+      output_path: "apns",
+      active_days_limit: 30,
+      p12_password: "",
+      force: true,  # <=== For debug ===
+      new_profile: proc do |profile_path|
+        # 生成後の処理
+      end,
+    )
   end
 
   desc "Test lane with fastlane spaceship"
